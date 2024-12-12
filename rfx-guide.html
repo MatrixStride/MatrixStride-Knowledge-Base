@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RFx Quick Guide - MatrixStride</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation Styles */
+        .nav {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1rem 4rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .back-button {
+            padding: 8px 16px;
+            background-color: #0088cc;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-button:hover {
+            background-color: #006699;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a6985 0%, #0088cc 100%);
+            color: white;
+            text-align: center;
+            padding: 8rem 1rem 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding: 0 2rem;
+            flex-grow: 1;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            width: fit-content;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .card h2 {
+            color: #1a6985;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: auto;
+        }
+
+        .features-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem;
+            position: relative;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .features-list li::before {
+            content: "→";
+            color: #0088cc;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Card Types */
+        .intro-card {
+            border-top: 4px solid #0088cc;
+        }
+
+        .rfi-card {
+            border-top: 4px solid #2ecc71;
+        }
+
+        .rfp-card {
+            border-top: 4px solid #e74c3c;
+        }
+
+        .rfq-card {
+            border-top: 4px solid #f1c40f;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav {
+                padding: 1rem 2rem;
+            }
+
+            .hero {
+                padding: 6rem 1rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://erpnext.matrixstride.com/files/matrixstride_logo.png" alt="MatrixStride Logo">
+            </div>
+            <a href="index.html" class="back-button">
+                <span>←</span>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>RFx Quick Guide</h1>
+        <p>Master the complete lifecycle of RFx processes - from initial information gathering to final quotation</p>
+    </section>
+
+    <!-- Cards Grid -->
+    <div class="cards-grid">
+        <!-- Introduction Card -->
+        <div class="card intro-card">
+            <div class="card-icon">📚</div>
+            <h2>Introduction to RFx</h2>
+            <p>A comprehensive overview of RFx processes in business procurement and vendor management.</p>
+            <ul class="features-list">
+                <li>Understanding RFx terminology</li>
+                <li>Process lifecycle and workflows</li>
+                <li>Best practices and guidelines</li>
+                <li>Key success factors</li>
+            </ul>
+        </div>
+
+        <!-- RFI Card -->
+        <div class="card rfi-card">
+            <div class="card-icon">ℹ️</div>
+            <h2>Request for Information</h2>
+            <p>Initial phase for gathering essential information about potential solutions and suppliers.</p>
+            <ul class="features-list">
+                <li>Market research strategies</li>
+                <li>Supplier capability assessment</li>
+                <li>Information collection methods</li>
+                <li>Analysis frameworks</li>
+            </ul>
+        </div>
+
+        <!-- RFP Card -->
+        <div class="card rfp-card">
+            <div class="card-icon">📝</div>
+            <h2>Request for Proposal</h2>
+            <p>Detailed proposal phase for evaluating comprehensive solutions and approaches.</p>
+            <ul class="features-list">
+                <li>Requirements specification</li>
+                <li>Evaluation criteria development</li>
+                <li>Proposal structure guidelines</li>
+                <li>Selection methodology</li>
+            </ul>
+        </div>
+
+        <!-- RFQ Card -->
+        <div class="card rfq-card">
+            <div class="card-icon">💰</div>
+            <h2>Request for Quote</h2>
+            <p>Final phase focusing on pricing and commercial terms for specific products or services.</p>
+            <ul class="features-list">
+                <li>Pricing structure analysis</li>
+                <li>Terms and conditions review</li>
+                <li>Vendor comparison methods</li>
+                <li>Negotiation strategies</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2023 MatrixStride Solutions. All rights reserved.</p>
+    </footer>
+</body>
+</html>
